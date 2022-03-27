@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8081/message').pipe(
+    this.http.get('http://localhost:8080/message').pipe(
       first(),
       tap(result => console.log('Message received from the server: ', result)),
       map(result => this.message = (result as any).message)
